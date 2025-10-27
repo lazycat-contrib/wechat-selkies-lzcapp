@@ -20,7 +20,7 @@ services:
     # nickrunning/wechat-selkies:0.0.5
     image: registry.lazycat.cloud/czyt/nickrunning/wechat-selkies:85bd2aa33099fcba
     container_name: wechat-selkies
-    user: 1000
+    user: root
     ports:
       - "3000:3000" # http port
       - "3001:3001" # https port
