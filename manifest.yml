@@ -29,10 +29,10 @@ services:
     environment:
       - PUID=1000 # user ID
       - PGID=100 # group ID
-      - TZ=Asia/Shanghai # timezone
+      - TZ={{.U.timezone}} # timezone
       - LC_ALL=zh_CN.UTF-8 # locale
-      - AUTO_START_WECHAT=true # default is true
-      - AUTO_START_QQ=false # default is false
+      - AUTO_START_WECHAT={{.U.auto_start_wechat}} # default is true
+      - AUTO_START_QQ={{.U.auto_start_qq}} # default is false
 
 locales:
   zh:
