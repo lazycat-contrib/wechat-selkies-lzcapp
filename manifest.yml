@@ -1,10 +1,3 @@
-name: WeChat Selkies
-package: community.lazycat.app.wechat-selkies
-version: 0.0.5
-min_os_version: 1.3.8
-description: 基于 Docker 的微信/QQ Linux 客户端，使用 Selkies WebRTC 技术提供浏览器访问支持。
-homepage: https://github.com/nickrunning/wechat-selkies
-author: nickrunning
 application:
   subdomain: wechat-selkies
   background_task: true
@@ -19,11 +12,7 @@ services:
   wechat-selkies:
     # nickrunning/wechat-selkies:0.0.5
     image: registry.lazycat.cloud/czyt/nickrunning/wechat-selkies:85bd2aa33099fcba
-    container_name: wechat-selkies
     user: root
-    ports:
-      - "3000:3000" # http port
-      - "3001:3001" # https port
     binds:
       - /lzcapp/var/config:/config
     environment:
@@ -33,11 +22,3 @@ services:
       - LC_ALL=zh_CN.UTF-8 # locale
       - AUTO_START_WECHAT={{.U.auto_start_wechat}} # default is true
       - AUTO_START_QQ={{.U.auto_start_qq}} # default is false
-
-locales:
-  zh:
-    name: "WeChat Selkies"
-    description: "基于 Docker 的微信/QQ Linux 客户端，使用 Selkies WebRTC 技术提供浏览器访问支持。 "
-  en:
-    name: "WeChat Selkies"
-    description: "Docker-based WeChat/QQ Linux client with browser access support using Selkies WebRTC technology."

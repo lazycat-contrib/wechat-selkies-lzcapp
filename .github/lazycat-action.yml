@@ -1,0 +1,51 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: build/wechat-selkies.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: wechat-selkies
+
+build:
+  toolchains: []
+  run_buildscript: false
+
+images:
+  - id: wechat-selkies
+    target: service
+    service: wechat-selkies
+    source: docker.io/nickrunning/wechat-selkies
+    channel: stable
+    tag_regex: '^[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: true
+    changelog_locales: [zh, en]
+    retry:
+      enabled: false
+      max_attempts: 3
+      initial_delay: 2s
+      max_delay: 30s
+    application:
+      language: zh
+      name: WeChat Selkies
+      source: https://github.com/nickrunning/wechat-selkies
+      source_author: nickrunning
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: WeChat Selkies
+    summary: "WeChat Selkies LazyCat package published from GitHub Actions."
