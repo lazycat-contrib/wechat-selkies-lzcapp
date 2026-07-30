@@ -3,15 +3,14 @@ application:
   background_task: true
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://wechat-selkies:3000/
-
 services:
   wechat-selkies:
     # nickrunning/wechat-selkies:0.0.5
-    image: registry.lazycat.cloud/czyt/nickrunning/wechat-selkies:85bd2aa33099fcba
+    # upstream: docker.io/nickrunning/wechat-selkies:0.0.15
+    image: registry.lazycat.cloud/czyt/nickrunning/wechat-selkies:943a72d900d21228
     user: root
     binds:
       - /lzcapp/var/config:/config
