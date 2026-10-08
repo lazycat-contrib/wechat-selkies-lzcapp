@@ -9,8 +9,8 @@ application:
 services:
   wechat-selkies:
     # nickrunning/wechat-selkies:0.0.5
-    # upstream: docker.io/nickrunning/wechat-selkies:0.0.16
-    image: docker.1ms.run/nickrunning/wechat-selkies:0.0.16
+    # upstream: docker.io/nickrunning/wechat-selkies:0.0.17
+    image: docker.1ms.run/nickrunning/wechat-selkies:0.0.17
     user: root
     binds:
       - /lzcapp/var/config:/config
