@@ -1,4 +1,5 @@
 package: community.lazycat.app.wechat-selkies
+license: MIT
 version: 0.0.17
 name: WeChat Selkies
 description: 基于 Docker 的微信/QQ Linux 客户端，使用 Selkies WebRTC 技术提供浏览器访问支持。
